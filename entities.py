@@ -1,8 +1,8 @@
 from peewee import *
 import datetime
+import os
 
-
-db = SqliteDatabase('entity.db')
+db = SqliteDatabase(os.path.realpath(__file__).split("entities.py")[0] + 'entity.db')
 
 class BaseModel(Model):
     class Meta:
